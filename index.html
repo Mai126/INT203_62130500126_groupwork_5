@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Vue Js - HelloWorld App</title>
+
+  <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+  <!-- Using via Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- https://tailwindcss.com/docs/installation -->
+  <!-- Using Tailwind via CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="container mt-3">
+     <div class="d-flex align-items-center justify-content-between results py-2">
+        <div class="number-like text-gray-900 uppercase">Number of my favourite dogs : <span>{{countLiked}}</span></div>
+        
+     </div>
+     <div>
+      
+      <photo-search @search-img ="(key)=>{this.inputSearch=key}" ></photo-search>
+       
+    <div class="flex mt-10 relative">
+    <div class="container   d-flex justify-content-center align-items-center" v-for="(dog,index) in resultQuery" :key="dog.id" v-if="resultQuery.length !==0">
+      <div class="card">
+        
+       
+          <div class="inner-card"> 
+            <photo-view :dog="dog"  @click-image="popupImage" @click-like="toggleLike"></photo-view>
+              
+          </div>
+         
+      </div>
+      <div>
+      <photo-show :dog="dog" @click-image="popupImage"></photo-show>
+            </div>
+     
+  </div>
+  <div v-else><h4 class="text-white"><span class="font-semibold italic text-red-500">{{inputSearch}}</span> No Photo</h4></div>
+  </div>
+
+  </div>
+  
+  </div>
+</div>
+
+
+  <!-- my main.js -->
+  <script src="./main.js"></script>
+  <script src="./components/PhotoView.js"></script>
+  <script src="./components/PhotoShow.js"></script>
+  <script src="./components/PhotoSearch.js"></script>
+  <script>app.mount('#app')</script>
+</body>
+
+</html>

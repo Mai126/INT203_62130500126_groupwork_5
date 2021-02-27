@@ -1,0 +1,79 @@
+body {
+    background-color: #a2dfe0
+}
+
+.container {
+    height: 100vh
+}
+
+.card {
+    background-color: #c1e8ed;
+    width: 400px;
+    padding: 10px;
+    border: 1px solid #eee
+}
+
+.inner-card {
+    background: #fff;
+    padding: 10px;
+    border-radius: 5px
+}
+
+.heart {
+    cursor: pointer;
+    height: 35px;
+    width: 35px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #beb4aa;
+    border-radius: 50%;
+    background-color: #eee
+}
+
+
+
+.like{
+    color: red;
+}
+
+.show{
+    display: none;
+}
+
+.lightbox{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1em;
+    background: rgba(0, 0, 0, 0.8);
+}
+.largeImg{
+    padding-left: 25%;
+}
+.largeImg img{
+    width: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-items: center;
+}
+
+.fa-times,.fa-arrow-right,.fa-arrow-left{
+    color: white;
+    z-index: 999;
+    float: right;
+    font-size: 25px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+.fa-arrow-right:hover,.fa-arrow-left:hover,.fa-times:hover{
+    opacity: 0.5;
+}
+
+
